@@ -68,12 +68,12 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addFirst(Student student) {
-
+/*
                	if(student==null)
 	               throw new IllegalArgumentException(" ");
                  else
                       Student 
-
+*/
 
 	}
 
