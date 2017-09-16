@@ -26,20 +26,22 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudents() {
 		// Add your implementation here
+                 Student[] result = new Student[students.length];
+
+           for (int i = 0, j = result.length - 1; i < students.length; i++, j--) {
+                result[j] = students[i];
+             }
+         return result;
              
-		return null;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
 
-             int s=students.size();
-            
-              
-   
-           for(inti=0;i<s;i++)
-           this.students=students[i];
+      
+           this.students=students;
+
 	}
 
 	@Override
@@ -51,11 +53,16 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
+                     
+
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+
+               		
+
+
 	}
 
 	@Override
