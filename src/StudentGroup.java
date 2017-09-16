@@ -61,35 +61,73 @@ public class StudentGroup implements StudentArrayOperation {
              if(index>students.length || index<0 || this.students[index]==null)
               throw new IllegalArgumentException(" ");
              else
-               this.students[index]=students[index];
+             {
+                this.students[index]=students[index];
                      
-
+               }
 	}
 
 	@Override
 	public void addFirst(Student student) {
-/*
+
                	if(student==null)
 	               throw new IllegalArgumentException(" ");
                  else
-                      Student 
-*/
+                    {
+                       new StudentGroup(students.length+1);
+                        this.students[0]=student;
 
+                         for(int i=1;i<students.length;i++)
+                          this.students[i]=students[i-1];
+                    }
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+
+                if(student==null)
+	               throw new IllegalArgumentException(" ");
+                 else
+                    {
+                       new StudentGroup(students.length+1);
+                       // this.students[]=student;
+
+                         for(int i=0;i<students.length-1;i++)
+                          this.students[i]=students[i-1];
+
+                        this.students[students.length-1]=student;
+                    }
+
 	}
 
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+
+
+              if(student==null)
+	               throw new IllegalArgumentException(" ");
+                 else
+                    {
+                       new StudentGroup(students.length+1);
+                       // this.students[]=student;
+
+                         for(int i=0;i<index;i++)
+                          this.students[i]=students[i];
+
+                     this.students[index]=student;
+
+                         for(int i=index+1;i<students.length;i++)
+                        this.students[i]=students[i-1];
+                    }
 	}
 
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+
+                
 	}
 
 	@Override
