@@ -49,7 +49,7 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 
              if(index>students.length || index<0)
-              throw new IllegalArgumentException(" ");
+              throw new IllegalArgumentException("llegalArgumentException");
              else
                return students[index]; 
 		//return null;
@@ -71,7 +71,7 @@ public class StudentGroup implements StudentArrayOperation {
 	public void addFirst(Student student) {
 
                	if(student==null)
-	               throw new IllegalArgumentException(" ");
+	               throw new IllegalArgumentException("llegalArgumentException");
                  else
                     {
                        new StudentGroup(students.length+1);
@@ -87,7 +87,7 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 
                 if(student==null)
-	               throw new IllegalArgumentException(" ");
+	               throw new IllegalArgumentException("llegalArgumentException");
                  else
                     {
                        new StudentGroup(students.length+1);
@@ -107,12 +107,11 @@ public class StudentGroup implements StudentArrayOperation {
 
 
               if(student==null)
-	               throw new IllegalArgumentException(" ");
+	               throw new IllegalArgumentException("llegalArgumentException");
                  else
                     {
                        new StudentGroup(students.length+1);
-                       // this.students[]=student;
-
+                      
                          for(int i=0;i<index;i++)
                           this.students[i]=students[i];
 
@@ -128,21 +127,99 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 
                 
+                 
+                    {
+                       new StudentGroup(students.length-1);
+                      
+                         for(int i=0;i<index;i++)
+                          this.students[i]=students[i];
+
+                     //this.students[index]=student;
+
+                         for(int i=index+1;i<students.length;i++)
+                        this.students[i-1]=students[i];
+                    }
+
+                
 	}
 
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+              int i,flag=1;
+           if(student==null)
+                throw new IllegalArgumentException("llegalArgumentException");
+
+          else
+            {  for(i=0;i<students.length;i++)
+             {
+                if(students[i]==student)
+                  {
+                  flag=0;
+                  break;
+                     }
+             }
+              if(flag==1)
+                   throw new IllegalArgumentException("Student not exist");
+else{
+            new StudentGroup(students.length-1);
+                      
+                         for(int j=0;j<i;j++)
+                          this.students[j]=students[j];
+
+                     //this.students[index]=student;
+
+                         for(int j=i+1;i<students.length;j++)
+                        this.students[j-1]=students[j];
+    }}
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+
+              if(index>students.length || index<0)
+              throw new IllegalArgumentException("llegalArgumentException");
+
+             else
+             {
+                new StudentGroup(students.length-index);
+                      
+                         for(int j=0;j<=index;j++)
+                          this.students[j]=students[j];
+
+                     
+              }
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+           int i,flag=1;
+                if(student==null)
+                throw new IllegalArgumentException("llegalArgumentException");
+ 
+                  else
+            {  for(i=0;i<students.length;i++)
+             {
+                if(students[i]==student)
+                  {
+                  flag=0;
+                  break;
+                     }
+             }
+              if(flag==1)
+                   throw new IllegalArgumentException("Student not exist");
+else{
+            new StudentGroup(students.length-i);
+                      
+                         for(int j=0;j<=i;j++)
+                          this.students[j]=students[j];
+
+                     
+    }}
+
+                 
 	}
 
 	@Override
